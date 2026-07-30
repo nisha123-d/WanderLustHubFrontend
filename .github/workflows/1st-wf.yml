@@ -1,0 +1,26 @@
+name: My first workflow
+
+on: 
+ push: 
+  branches: 
+   - main
+
+jobs:
+ first-job:
+
+  runs-on: ubuntu-latest
+
+  steps:
+     - name: checkout repo
+       uses: actions/checkout@v4
+
+     - name: Print hello msg
+       run: echo "Hello Devops"
+     - name: Print today's date
+       run: date
+     - name: Print branch name
+       run: echo "Branch name: ${{github.ref_name}}"
+     - name: Print repo name
+       run: echo "Branch name: ${{github.repository}}"
+          
+  
